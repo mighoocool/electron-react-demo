@@ -1,0 +1,33 @@
+{
+  "name": "electron-react-demo",
+  "version": "0.0.1",
+  "description": "this is an electron-react demo",
+  "main": "main.js",
+  "repository": "https://github.com/mighoocool/electron-react-demo.git",
+  "author": "mycomputer <shenminghao>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack --config webpack.config.dev.js"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "electron": "^1.7.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.9.1",
+    "webpack-dev-server": "^2.9.5"
+  }
+}
