@@ -1,9 +1,10 @@
-const {app,BrowserWindow} = require('electron');
+const {app,BrowserWindow,ipcMain} = require('electron');
+const creatTray = require('./main/tray')
 
 let mainWindow;
 
 app.on('window-all-closed',()=>{
-    app.quit();
+    // app.quit();
 });
 
 app.on('ready',()=>{
@@ -18,5 +19,12 @@ app.on('ready',()=>{
     mainWindow.on('closed',()=>{
         mainWindow = null;
     })
+    creatTray(mainWindow)
+    console.log(creatTray)
     mainWindow.webContents.openDevTools()
+})
+
+ipcMain.on('hide-window',()=>{
+    console.log('123123123')
+    mainWindow.hide()
 })

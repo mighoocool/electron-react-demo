@@ -4,12 +4,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
 const extractStyle = new ExtractTextPlugin('./app/dist/style.css')
-const html = new HtmlWebpackPlugin({template:'./app/src/index.html'})
+const html = new HtmlWebpackPlugin({template:'./app/renderer/index.html'})
 
 module.exports = {
     target:'electron-renderer',
     devtool: 'source-map',
-    entry:'./app/src/index.js',
+    entry:'./app/renderer/index.js',
     output:{
         filename:'bundle.js',
         path:path.resolve(__dirname,'app/dist')
