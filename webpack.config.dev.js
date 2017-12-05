@@ -16,8 +16,8 @@ module.exports = {
     },
     module:{
         rules:[
-            {test:/\.css$/,exclude: /(node_modules|bower_components)/,use:extractStyle.extract(['css-loader'])},
-            {test:/\.less$/,exclude: /(node_modules|bower_components)/,use:extractStyle.extract(['less-loader'])},
+            {test:/\.css$/,include: /(app|antd)/,use:extractStyle.extract(['css-loader'])},
+            {test:/\.less$/,include: /(app|antd)/,use:extractStyle.extract(['less-loader'])},
             {test:/\.js$/,exclude: /(node_modules|bower_components)/,use:'babel-loader'}
         ]
     },
@@ -27,5 +27,8 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"development"',
         }),
-    ]
+    ],
+    devServer: {
+        port:'8888'
+    }
 }
