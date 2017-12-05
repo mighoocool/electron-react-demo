@@ -11,6 +11,9 @@ const creatTray = (win) =>{
     ])
     tray.setToolTip('托盘');
     tray.setContextMenu(contextMenu)
+    tray.on('double-click',()=>{
+        win.show()
+    })
 }
 
 module.exports = creatTray
