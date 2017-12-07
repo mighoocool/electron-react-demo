@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {Provider} from 'react-redux';
-import Toolbar from './toolBar'
 import {createStore,applyMiddleware} from 'redux';
 import rootReducer from '../reducers/index';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
+import Router from './router'
+import './body'
 
 const middleware = applyMiddleware(thunk)
 
@@ -15,7 +16,7 @@ export default class Root extends Component {
     render(){
         return(
             <Provider store={store}>
-                <Toolbar></Toolbar>
+                <Router></Router>
             </Provider>
         )
     }

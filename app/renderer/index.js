@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM,{render} from 'react-dom';
 import Root from './containers/root';
-import './styles/public.css'
+import './styles/index.less'
 class App extends Component {
     constructor(arg){
         super(arg)

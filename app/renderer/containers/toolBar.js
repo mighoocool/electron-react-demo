@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import remote,{ipcRenderer} from 'electron'
+import remote, {ipcRenderer} from 'electron';
+import Toolbar from '../components/toolBar';
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-        stores: state
-    }
+    return {stores: state}
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         dispatch1: () => {
-            dispatch({type:'INCREMENT_COUNTER'})
+            dispatch({type: 'INCREMENT_COUNTER'})
+        },
+        hideWindow: () => {
+            ipcRenderer.send('hide-window')
+        },
+        push:(link)=>{
+            ownProps.push(link)
         }
     }
 }
-class Toolbar extends Component {
-    constructor(arg){
-        super(arg)
-    }
-    hideWindow=()=>{
-        console.log('4444444')
-        ipcRenderer.send('hide-window')
-    }
-    render(){
-        return(
-            <div style={{background:'red'}}>
-                <button onClick={(this.hideWindow)}>close</button>
-            </div>
-        )
-    }
-}
+// class ToolbarWrap extends Component {
+//   render() {
+//       console.log(this.props)
+//     return (
+//       <Toolbar/>
+//     )
+//   }
+// }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Toolbar)
