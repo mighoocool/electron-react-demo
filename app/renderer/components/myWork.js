@@ -5,6 +5,7 @@ import {NavLink} from 'react-router-dom';
 import fs from 'fs';
 import path from 'path'
 import electron,{remote} from 'electron'
+import configLib from '../../lib/configLib'
 export default class Home extends Component {
     constructor(arg){
         super(arg)
@@ -18,6 +19,7 @@ export default class Home extends Component {
         this.getFolderList()
         console.log(path.resolve('./'))
         console.log(remote.app.getPath('userData'))
+        console.log(configLib)
     }
     getFolderList = () =>{
         const {basePath,currPath} = this.state;
